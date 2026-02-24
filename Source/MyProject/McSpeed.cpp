@@ -1,5 +1,5 @@
 #include "McSpeed.h"
-
+#include "Components/ShapeComponent.h"
 
 
 UMcSpeed::UMcSpeed()
@@ -15,7 +15,7 @@ void UMcSpeed::TickComponent(float DeltaTime, ELevelTick Tick, FActorComponentTi
 }
 float UMcSpeed::UpdateMcSpeed() 
 {
-	UShapeComponent* shape = Cast<UShapeComponent>(GetRootComponent());
+	UShapeComponent* shape = Cast<UShapeComponent>(UpdatedComponent);
 	shape->SetPhysicsLinearVelocity(FVector(10.0f, 0.0f, 0.0f));
-	return shape-> GetPhysicsLinearVelocity().X;
+	return shape->GetPhysicsLinearVelocity().X;
 }

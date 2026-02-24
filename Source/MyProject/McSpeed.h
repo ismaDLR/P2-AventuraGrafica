@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include <random>
+#include "GameFramework/PawnMovementComponent.h"
 #include "McSpeed.generated.h"
 
 UCLASS(BlueprintType, Blueprintable, meta = (BlueprintSpawnableComponent))
 
-class UMcSpeed : public UActorComponent
+class UMcSpeed : public UPawnMovementComponent
 {
 	GENERATED_BODY()
 
@@ -20,6 +20,4 @@ public:
 	
 	UFUNCTION(BlueprintCallable)
 	float UpdateMcSpeed();
-		
-
 };
